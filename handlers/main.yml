@@ -1,0 +1,4 @@
+---
+- name: restart Pritunl
+  service: name=pritunl state=restarted
+  when: ansible_connection != 'docker'
