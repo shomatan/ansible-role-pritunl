@@ -12,5 +12,5 @@ galaxy_info:
 
 dependencies:
   - shomatan.epel
-  - role: shomatan.mongodb
+  - src: shomatan.mongodb
     when: ansible_connection != 'docker'
