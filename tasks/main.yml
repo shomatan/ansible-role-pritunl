@@ -12,6 +12,12 @@
     name: pritunl
     enablerepo: epel,pritunl
 
+- name: Copy pritunl config file.
+  template:
+    src: pritunl.conf.j2
+    dest: /etc/pritunl.conf
+  notify: restart pritunl
+   
 # service
 - name: Ensure Pritunl is started and enabled to start at boot.
   service: name=pritunl state=started enabled=yes
